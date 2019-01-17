@@ -29,4 +29,18 @@ router.get('/', function(req, res, next) {
   // res.render('index', { title: "express"});
 });
 
+router.get('/search', (req,res)=>{
+  res.render('search',{
+    title: "Search",
+  })
+})
+
+router.post('/search/movie',(req,res)=>{
+  // submitted data from forms comes in the req Object
+  // queryString data is in req.query
+  // posted data is in req.body
+
+  res.json(req.body)
+})
+
 module.exports = router;
